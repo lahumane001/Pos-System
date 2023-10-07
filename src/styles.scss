@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;700&family=Lato:wght@100;400;700;900&display=swap');
+
+
+@import "./assets/sass/abstract/var";
+
+@import "./assets/sass/base/base";
+@import "./assets/sass/base/utilities";
+
+@import "./assets/sass/layout/grid";

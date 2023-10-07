@@ -1,0 +1,114 @@
+<div class="row" id="productData">
+    <div class="col-6">
+        <div class="tableData">
+            <table class="table" border="1">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Products</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center bg-Color" *ngIf="noData; else nodataArr">
+                    <tr *ngFor="let d of dataArr ; let i = index">
+                        <td><i class="fa fa-times-circle" (click)="delData(i)" aria-hidden="true"></i></td>
+                        <td>{{d.name}}</td>
+                        <td>{{d.price}}</td>
+                        <td>
+                            <button (click)="decrement(i)" class="btnSign">-</button>
+                            <input type="text" [value]="qtyArr[i]" class="counter text-center">
+                            <button (click)="increment(i)" class="btnSign">+</button>
+                        </td>
+                        <td>{{d.price*qtyArr[i]}}</td>
+                    </tr>
+                </tbody>
+                <ng-template #nodataArr>
+                    <h2 class="text-center bg-Color"> There Are No Product</h2>
+                </ng-template>
+            </table>
+            <div class="total bg-Color">
+                <div class="leftBox ">
+                    <h3>SubTotal</h3>
+                    <h3>VAT tax</h3>
+                    <h3>Discount</h3>
+                    <h3>Total</h3>
+                </div>
+                <div class="middleBox" >
+                    <p>{{qtyTotal}} :Items</p>
+                    <p>10%</p>
+                    <p>10%</p>
+                </div>
+                <div class="rightBox" >
+                    <p > {{subTotal |currency:'INR'}}</p>
+                    <p>{{vatAmt |currency:'INR'}}</p>
+                    <p>{{discAmt |currency:'INR'}}</p>
+                    <p>{{totalAmt |currency:'INR'}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn-danger btn" (click)="cancelSale()">cancel sale</button>
+                <button class="btn-sucess btn" (click)="sendToReceipt()">Process sale</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row test">
+            <div class="col-4" *ngFor="let list of dataList ; let i = index">
+                <div class="image" (click)="passData(list,qtyArr[i],list.price * qtyArr[i])">
+                    <img [src]="list.image" class="imageShow" alt="">
+                    <div class="content">
+                        <h1>price : {{list.price}}</h1>
+                        <p> discrip : {{list.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="model" id="model" *ngIf="isModelVisible">
+    <h2 class="bg-black">Receipt</h2>
+    <span class="text-center">Bill No : {{billNo}} </span>
+    <div>
+        <p>Date:{{date | date :'short'}}</p>
+    </div>
+    <table class="totalTable">
+        <thead class="reciept">
+            <tr>
+                <th>#</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
+            </tr>
+        </thead>
+        <tbody class="dataReceipt">
+            <tr *ngFor="let d of dataArr ; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{d.name}}</td>
+                <td> {{d.Qty}}</td>
+                <td>{{d.price*qtyArr[i]}}</td>
+            </tr>
+            <tr class="totalReceipt">
+                <td></td>
+                <td><b>TotalItem</b></td>
+                <td><b>{{qtyTotal}} Items</b></td>
+                <td><b>{{totalAmt |currency:'INR'}}</b></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>Discount</td>
+                <td>{{discAmt |currency:'INR'}}</td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>Vat</td>
+                <td>{{vatAmt |currency:'INR'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div >
+        <button class="btn-close" (click)="CloseBtn()">Close</button>
+    </div>
+</div>

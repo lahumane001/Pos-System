@@ -1,0 +1,31 @@
+{ 
+"data" : [
+    {
+    "name": "laptop",
+    "price": "1300",
+    "category": "laptops",
+    "description": "laptop",
+    "image": "https://cdn.ttgtmedia.com/rms/onlineimages/hp_elitebook_mobile.jpg"
+    },
+    {
+    "name": "sweater",
+    "price": "400",
+    "category": "Clothing",
+    "description": "fashion, clothes , sweater, wool, cardigan,…",
+    "image" : "https://images.bewakoof.com/t640/men-s-maroon-flat-knits-sweater-438447-1656143708-1.jpg"
+    },
+    {
+    "name": "tie",
+    "price": "230",
+    "category": "Clothing",
+    "description": "fashion, tie, clothes, accessory , accessoire,…",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYfz_aB08GlE_h82r8MNgjCBFCBfAG_knjVQ&usqp=CAU"
+    },
+    {
+    "name": "jacket",
+    "price": "450",
+    "category": "Clothing",
+    "description": "winter jacket ",
+    "image": "https://img.freepik.com/premium-photo/handsome-brutal-man-hipster-model-with-hairstyle-fashionable-black-leather-jacket-walks-mall_338491-16875.jpg"
+    }
+    ]}

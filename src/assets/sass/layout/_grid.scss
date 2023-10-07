@@ -1,0 +1,42 @@
+
+
+.container{
+    max-width: 116rem;
+    margin: 0 auto;
+    // border: red 1px solid;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+[class^="col-"]{
+    padding: 0 1.5rem;
+}
+
+// .col-3{
+//     width:  math.div(100% * 3 / 12);
+//     flex: 0 0  math.div(100% * 3 / 12);
+// }
+
+// .col-4{
+//     width:  570px;
+//     flex : 0 0  570px;
+// }
+
+.col-6{
+    width:  570px;
+    flex: 0 0  570px;
+}
+
+// .col-9{
+//     width:  math.div(100% * 9 / 12);
+//     flex: 0 0  math.div(100% * 9 / 12);
+// }
+
+// .col-12{
+//     width: 100%;
+//     flex: 0 0  math.div(100% * 12 / 12);
+// }
