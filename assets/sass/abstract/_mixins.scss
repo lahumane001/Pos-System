@@ -1,0 +1,43 @@
+
+
+@mixin atCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// @mixin responsive-phone{
+//     @media (max-width : 600px){
+//         @content;
+//     }
+// }
+
+// phone >> max-width 600px
+// tabPort >> max-width 900px
+// tabLand >> max-width 1200px
+// default css will apply here >> 1200px to 1800px 
+// bigScreens >> min-width 1800px
+
+@mixin response($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width:600px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tabPort{
+        @media (max-width:900px){
+            @content;
+        }
+    }
+    @if $breakpoint == tabLand{
+        @media (max-width:1200px){
+            @content;
+        }
+    }
+    @if $breakpoint == bigScreens{
+        @media (min-width:1800px){
+            @content;
+        }
+    }
+}
