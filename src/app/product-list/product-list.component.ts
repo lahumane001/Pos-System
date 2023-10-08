@@ -71,6 +71,11 @@ export class ProductListComponent implements OnInit {
 
   cancelSale() {  // this function is reset data in selected product table by using cancel sale btn
     this.dataArr = []
+    this.subTotal = 0;
+    this.qtyTotal = 0;
+    this.vatAmt = 0;
+    this.discAmt = 0;
+    this.totalAmt = 0;
   }
   sendToReceipt() {   // this function is send data to receipt by using process sale button
     this.date = new Date()
